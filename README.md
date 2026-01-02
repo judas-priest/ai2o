@@ -1,103 +1,103 @@
 # ai2o
 
-AI-powered OSINT and productivity platform for organizations.
+AI-платформа для OSINT и автоматизации бизнеса.
 
-**Domain**: [ai2o.ru](https://ai2o.ru)
+**Домен**: [ai2o.ru](https://ai2o.ru)
 
-## Overview
+## Что это
 
-ai2o is a modular platform that combines:
+ai2o — модульная платформа, объединяющая:
 
-- **OSINT Tools** - Company data from EGRUL, court cases from FSSP, tender monitoring
-- **AI Agents** - 50+ specialized agents for research, support, sales, and more
-- **Productivity** - Task automation, document processing, analytics
+- **OSINT-инструменты** — данные о компаниях (ЕГРЮЛ), судебные дела (ФССП), тендеры
+- **AI-агенты** — 50+ специализированных агентов для исследований, поддержки, продаж
+- **Автоматизация** — обработка документов, аналитика, интеграции
 
-## Monorepo Structure
+## Структура
 
 ```
 ai2o/
 ├── packages/
-│   ├── core/           # @ai2o/core - shared utilities
-│   ├── agents/         # @ai2o/agents - AI agent engine
-│   ├── osint/          # @ai2o/osint - OSINT parsers
-│   └── api/            # @ai2o/api - Express.js backend
+│   ├── core/           # @ai2o/core — общие утилиты
+│   ├── agents/         # @ai2o/agents — движок AI-агентов
+│   ├── osint/          # @ai2o/osint — парсеры ОСИНТ
+│   └── api/            # @ai2o/api — Express.js бэкенд
 ├── apps/
-│   ├── web/            # Vue 3 frontend
-│   └── telegram/       # Telegram bot
-├── docs/               # Documentation
+│   ├── web/            # Vue 3 фронтенд
+│   └── telegram/       # Telegram бот
+├── docs/               # Документация
 └── deploy/             # Docker, CI/CD
 ```
 
-## Quick Start
+## Быстрый старт
 
 ```bash
-# Clone
-git clone https://github.com/judas-priest/ai2o.git
+# Клонировать
+git clone https://github.com/unidel2035/ai2o.git
 cd ai2o
 
-# Install dependencies
+# Установить зависимости
 pnpm install
 
-# Development
+# Разработка
 pnpm dev
 
-# Build all packages
+# Сборка
 pnpm build
 
-# Run tests
+# Тесты
 pnpm test
 ```
 
-## Packages
+## Пакеты
 
-| Package | Description | Status |
-|---------|-------------|--------|
-| `@ai2o/core` | Shared utilities, types, logging | ✅ |
-| `@ai2o/agents` | AI Agent engine (50+ agents) | ✅ |
-| `@ai2o/osint` | OSINT tools (EGRUL, FSSP, Torgi) | ✅ |
-| `@ai2o/api` | Express.js API Gateway | ✅ |
+| Пакет | Описание |
+|-------|----------|
+| `@ai2o/core` | Утилиты, типы, логирование, авторизация |
+| `@ai2o/agents` | AI-агенты: Research, Support, OSINT и др. |
+| `@ai2o/osint` | Парсеры: ЕГРЮЛ, ФССП, Торги |
+| `@ai2o/api` | REST API на Express.js |
 
-## Apps
+## Приложения
 
-| App | Description | URL |
-|-----|-------------|-----|
-| Web | Vue 3 frontend | https://ai2o.ru |
-| Telegram | AI bot | @ai2o_bot |
+| Приложение | Описание |
+|------------|----------|
+| web | Vue 3 SPA — основной интерфейс |
+| telegram | Telegram бот с AI |
 
-## Technology Stack
+## Стек
 
 - **Runtime**: Node.js 18+, Bun
-- **Language**: TypeScript
-- **Frontend**: Vue 3, Pinia, PrimeVue
-- **Backend**: Express.js
+- **Язык**: TypeScript
+- **Фронтенд**: Vue 3, Pinia, PrimeVue
+- **Бэкенд**: Express.js
 - **AI**: DeepSeek, OpenAI, Anthropic
-- **Database**: Integram (via MCP)
-- **Build**: pnpm, tsup, Vite
+- **БД**: Integram (через MCP)
+- **Сборка**: pnpm workspaces, tsup, Vite
 
-## Development
+## Команды
 
 ```bash
-# Install pnpm
-npm install -g pnpm
-
-# Install dependencies
-pnpm install
-
-# Run specific package
+# Запустить конкретный пакет
 pnpm --filter @ai2o/core dev
 
-# Run specific app
+# Запустить приложение
 pnpm --filter web dev
 
-# Add dependency to package
+# Добавить зависимость в пакет
 pnpm --filter @ai2o/agents add openai
+
+# Сборка всех пакетов
+pnpm build
+
+# Проверка типов
+pnpm typecheck
 ```
 
-## Related Projects
+## Связанные проекты
 
-- [integram-standalone](https://github.com/unidel2035/integram-standalone) - Database platform
-- [dronedoc2025](https://github.com/unidel2035/dronedoc2025) - Original monolith (legacy)
+- [integram-standalone](https://github.com/unidel2035/integram-standalone) — платформа БД
+- [dronedoc2025](https://github.com/unidel2035/dronedoc2025) — оригинальный монолит (legacy)
 
-## License
+## Лицензия
 
 MIT
